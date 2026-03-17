@@ -5,8 +5,73 @@
     <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aluno Online</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <aside class="sidebar">
+        <header class="logo-container">
+            <img src="/learn.svg" width="70" alt="Imagem da logotipo"/>
+            <h3>Aluno Online</h3>
+        </header>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Notas</a></li>
+                <li><a href="#">Faltas</a></li>
+                <li><a href="#">Boletos</a></li>
+                <li><a href="#">Requerimentos</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <h1>Olá, Aluno!</h1>
+        <img src="/avatar.svg" width="70" alt="Imagem de usuário"/>
+      </header>
+      
+      <section>
+      <h2>Bem-vindo ao portal do aluno</h2>
+      
+      <article class="card">
+        <header class="card-header">
+          Mural de Avisos
+        </header>
+        <section class="card-body">
+          <p>Inscrição para o projeto de extensão</p>
+          <p>Eleição para representante de turma</p>
+        </section>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          Calendário Acadêmico
+        </header>
+        <section class="card-body">
+          <p>23/02 - Início do período letivo 2026-1</p>
+          <p>25/04 - Prazo final para aplicação da P1</p>
+          <p>23/06 - Prazo final para aplicação da P2</p>
+          <p>04/07 - Fim do período letivo 2026-1</p>
+        </section>
+      </article>
+
+      <article class="card">
+        <header class="card-header">
+          Minhas Disciplinas
+        </header>
+        <section class="card-body">
+          <p>Construção de Frontend</p>
+          <p>BI e Data Warehousing</p>
+          <p>Manutenção de Software e DevOps</p>
+          <p>Governança de TI</p>
+          <p>Direitos Humanos e Ambientais</p>
+        </section>
+      </article>
+      </section>
+    </main>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
