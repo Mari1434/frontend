@@ -21,6 +21,40 @@ body {
     color: var(--cor-texto);
 }
 
+.headerlogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.input {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cor-texto);
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.h2 {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: normal;
+    align-items: center;
+}
+
+.erro {
+    color: red;
+}
+
 .sidebar {
     display: none; 
 }
@@ -30,6 +64,7 @@ body {
     flex: 1;
     flex-direction: column;
     padding: 24px 16px;
+    justify-content: center;
 }
 
 .top-bar {
