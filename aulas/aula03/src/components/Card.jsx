@@ -1,32 +1,12 @@
-
-function Card() {
+function Card(props) {
     return (
-        <section>
         <article>
-          <h3>Mural de Avisos</h3>
+          <h3>{props.titulo}</h3>
           <ul>
-            <li>Inscrição para o projeto de extensão</li>
-            <li>Eleição para representante da turma</li>
-            <li></li>
+            {props.itens.map((item, index) => 
+            <li key={index}>{item}</li>)}
           </ul>
         </article>
-        <article>
-          <h3></h3>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </article>
-        <article>
-          <h3></h3>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </article>
-      </section>
     );
 }
 
