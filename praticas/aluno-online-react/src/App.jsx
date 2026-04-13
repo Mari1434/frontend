@@ -6,7 +6,7 @@ import Notas from "./pages/Notas";
 import Requerimentos from "./pages/Requerimentos";
 
 function App() {
-  return <Requerimentos />;
+  return <Dashboard />;
 }
 
 export default App;
