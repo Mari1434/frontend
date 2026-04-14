@@ -2,12 +2,12 @@ import Main from "../components/Main";
 import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Boletos() {
+function Boletos(props) {
     return (
         <>
-            <Sidebar />
+            <Sidebar navegaPara={props.navegaPara}/>
             <Main titulo="Meus Boletos" subtitulo="Histórico de Pagamentos">
-                <Tabela />
+                <Tabela colunas={[]} dados={[]}/>
             </Main>
         </>
     );

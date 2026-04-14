@@ -2,12 +2,12 @@ import Main from "../components/Main";
 import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Requerimentos() {
+function Requerimentos(props) {
     return (
         <>
-            <Sidebar />
+            <Sidebar navegaPara={props.navegaPara}/>
             <Main titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria">
-                <Tabela />
+                <Tabela colunas={[]} dados={[]}/>
             </Main>
         </>
     );
