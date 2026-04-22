@@ -2,7 +2,7 @@ import Main from "../components/Main";
 import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Faltas() {
+function Faltas(props) {
     const colunasFaltas = ["Disciplina", "Total de Faltas", "% de Presença"];
 
     const faltas2026_1 = [
@@ -19,7 +19,7 @@ function Faltas() {
 
     return (
         <section className="flex min-h-screen w-full">
-            <Sidebar />
+            <Sidebar navegaPara={props.navegaPara} />
             
             <Main titulo="Minhas Faltas" subtitulo="Histórico de Faltas por Semestre">
                 

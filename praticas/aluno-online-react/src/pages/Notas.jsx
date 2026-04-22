@@ -2,7 +2,7 @@ import Main from "../components/Main";
 import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Notas() {
+function Notas(props) {
 
     const colunas = ["Disciplina", "A1", "A2", "A3", "Menção"];
     
@@ -22,7 +22,7 @@ function Notas() {
 
     return (
         <section className="flex min-h-screen w-full">
-            <Sidebar />
+            <Sidebar navegaPara={props.navegaPara} />
             
             <Main titulo="Minhas Notas" subtitulo="Histórico de Notas por Semestre">
                 
