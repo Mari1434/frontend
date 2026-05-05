@@ -1,7 +1,11 @@
+import { useParams } from 'react-router';
+
 function Perfil() {
+    const { id } = useParams();
+
     return (
         <>
-            <h1>Perfil do usuário</h1>
+            <h1>Perfil do Usuário {id}</h1>
         </>
     );
 }
