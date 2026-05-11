@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import InputMatricula from "./InputMatricula";
 import InputSenha from "./InputSenha";
 import InputSubmit from "./InputSubmit";
 
-function FormLogin({ navegaPara }) {
+function FormLogin() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [emailErro, setEmailErro] = useState("");
@@ -34,7 +36,7 @@ function FormLogin({ navegaPara }) {
         }
 
         if (!temErro) {
-            navegaPara(1);
+            navigate("/");
         }
     }
 

@@ -1,8 +1,7 @@
 import Main from "../components/Main";
-import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Boletos(props) {
+function Boletos() {
     const colunasBoletos = ["Vencimento", "Valor R$", "Situação"];
 
     const dadosBoletos = [
@@ -22,8 +21,7 @@ function Boletos(props) {
     ];
 
     return (
-        <section className="flex min-h-screen w-full">
-            <Sidebar navegaPara={props.navegaPara}/>
+        <section>
             
             <Main titulo="Meus Boletos" subtitulo="Histórico de Pagamentos">
                 

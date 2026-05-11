@@ -1,8 +1,7 @@
 import Main from "../components/Main";
-import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 
-function Requerimentos(props) {
+function Requerimentos() {
     const colunasRequerimentos = ["Tipo de Requerimento", "Data de Solicitação", "Situação"];
 
     const dadosRequerimentos = [
@@ -14,8 +13,7 @@ function Requerimentos(props) {
     ];
 
     return (
-        <section className="flex min-h-screen w-full">
-            <Sidebar navegaPara={props.navegaPara} />
+        <section>
             
             <Main titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria">
                 
