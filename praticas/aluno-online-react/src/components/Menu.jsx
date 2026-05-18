@@ -1,6 +1,6 @@
 import './Menu.css';
 import { useNavigate, NavLink } from 'react-router';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../hooks/UseAuth';
 
 function Menu() {
     const { logout } = useAuth();

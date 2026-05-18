@@ -1,18 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-    const [usuario, setUsuario] = useState({});
+    const [usuario, setUsuario] = useState(null); 
     const [logado, setLogado] = useState(false);
 
-    const login = () => {
-        setUsuario({nome: "Mariana"});
+    const login = (dados) => {
+        setUsuario({ email: dados.username });
         setLogado(true);
     }
 
     const logout = () => {
-        setUsuario({});
+        setUsuario(null);
         setLogado(false);
     }
 
@@ -23,9 +23,4 @@ function AuthProvider({ children }) {
     );
 }
 
-function useAuth() {
-    return useContext(AuthContext);
-}
-
-// eslint-disable-next-line react-refresh/only-export-components
-export { AuthProvider, useAuth };
+export { AuthProvider, AuthContext };
