@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router';
 import { listar } from '../services/produtoService';
 
 function Listagem() {
-    const [ erro, setErro ] = useState();
     const [ dados, setDados ] = useState([]);
     const navigate = useNavigate();
 
@@ -18,7 +17,6 @@ function Listagem() {
     return (
     <>
         <h1>Listagem de Produtos</h1>
-        <p>{erro}</p>
         <button onClick={() => navigate("/produtos/novo")}>Novo</button>
         <table>
             <thead>
