@@ -1,0 +1,26 @@
+{
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipoRequerimento": "Revisão de Menção",
+      "descricao": "Solicito a revisão da menção final da disciplina.",
+      "dataRequerimento": "15/12/2025",
+      "situacao": "Indeferido"
+    },
+    {
+      "id": "2",
+      "tipoRequerimento": "Trancamento de Matrícula",
+      "descricao": "Motivos pessoais e de saúde.",
+      "dataRequerimento": "05/01/2024",
+      "situacao": "Deferido"
+    },
+    {
+      "tipoRequerimento": "Trancamento de Matrícula",
+      "descricao": "Quero trancar o curso. Qual procedimento devo fazer?",
+      "dataRequerimento": "08/06/2026",
+      "situacao": "Em análise",
+      "id": "LgdaiLDpvPc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

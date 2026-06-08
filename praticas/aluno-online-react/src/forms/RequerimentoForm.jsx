@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { createRequerimento } from '../services/requerimentoService';
 
 const RequerimentoForm = () => {
   const navigate = useNavigate();
@@ -11,12 +12,36 @@ const RequerimentoForm = () => {
     formState: { errors } 
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Requerimento cadastrado com sucesso:", data);
-    reset();
+  const dataAtual = new Date().toLocaleDateString('pt-BR');
+
+  const nomesTipos = {
+    revisao: "Revisão de Menção",
+    dispensa: "Dispensa de Disciplina",
+    trancamento: "Trancamento de Matrícula",
+    mudanca: "Mudança de Turno"
   };
 
-  const dataAtual = new Date().toLocaleDateString('pt-BR');
+  const onSubmit = async (data) => {
+    try {
+      const tipoFormatado = nomesTipos[data.tipoRequerimento] || "Outro";
+      
+      const novoRequerimento = {
+        tipoRequerimento: tipoFormatado,
+        descricao: data.descricao,
+        dataRequerimento: dataAtual,
+        situacao: "Em análise"
+      };
+
+      await createRequerimento(novoRequerimento);
+
+      reset();
+      navigate('/requerimentos');
+
+    } catch (error) {
+      console.error("Erro ao cadastrar requerimento:", error);
+      alert("Houve um erro ao enviar seu requerimento. Tente novamente.");
+    }
+  };
 
   return (
     <div className="font-sans text-black">
