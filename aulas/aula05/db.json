@@ -1,16 +1,10 @@
 {
   "produtos": [
     {
+      "id": "CPep8dFha8o",
       "nome": "Maçã",
-      "preco": "7.99",
-      "unidade": "Kg",
-      "id": "CPep8dFha8o"
-    },
-    {
-      "nome": "",
-      "preco": "",
-      "unidade": "",
-      "id": "9eB3Bs5BkY8"
+      "preco": "8.99",
+      "unidade": "Kg"
     }
   ],
   "fornecedores": [],
