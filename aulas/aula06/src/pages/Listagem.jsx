@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { listar, remover } from '../services/produtoService';
+import { useAuth } from '../contexts/AuthContext';
 
 function Listagem() {
     const [ dados, setDados ] = useState([]);
     const navigate = useNavigate();
+    const { logout, usuario } = useAuth();
 
     const trataRemover = async (produto) => {
         await remover(produto);
@@ -13,7 +15,7 @@ function Listagem() {
 
     useEffect(() => {
         const carregar = async () => {
-            const resposta = await listar();
+            const resposta = await listar(usuario.token);
             setDados(resposta);
         };
         carregar();
@@ -21,6 +23,7 @@ function Listagem() {
 
     return (
     <>
+        <Link to="/login" onClick={() => logout()}>Sair</Link>
         <h1>Listagem de Produtos</h1>
         <button onClick={() => navigate("/produtos/novo")}>Novo</button>
         <table>

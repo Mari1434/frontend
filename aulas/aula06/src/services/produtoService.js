@@ -26,9 +26,15 @@ async function obter(produto) {
 }
 
 // GET /
-async function listar(produto) {
+async function listar(token) {
+    // simulação do uso do token
+    if (!token) {
+        throw new Error("401 Não autorizado");
+    }
     try {
-    const resposta = await fetch(url);
+    const resposta = await fetch(url, { 
+        headers: { Authorization: `Beraer ${token}`}
+    });
     return await resposta.json();
     } catch(error) {
         return { message: `Deu ruim! ${error.code}-${error.message}` };
