@@ -13,10 +13,14 @@ function FormLogin() {
     const [senha, setSenha] = useState("");
     const [emailErro, setEmailErro] = useState("");
     const [senhaErro, setSenhaErro] = useState("");
+    
+    const [erroGeral, setErroGeral] = useState(""); 
 
-    const trataSubmit = (e) => {
+    const trataSubmit = async (e) => {
         e.preventDefault();
         let temErro = false;
+        
+        setErroGeral("");
 
         if (!email) {
             setEmailErro("O campo de e-mail é obrigatório.");
@@ -39,8 +43,12 @@ function FormLogin() {
         }
 
         if (!temErro) {
-            login({ username: email, password: senha });
-            navigate("/");
+            try {
+                await login(email, senha);
+                navigate("/");
+            } catch {
+                setErroGeral("E-mail ou senha incorretos. Tente novamente.");
+            }
         }
     }
 
@@ -56,6 +64,13 @@ function FormLogin() {
                 erro={senhaErro} 
                 mudaValor={(e) => setSenha(e.target.value)} 
             />
+            
+            {erroGeral && (
+                <div className="text-red-600 text-sm text-center font-semibold">
+                    {erroGeral}
+                </div>
+            )}
+
             <InputSubmit texto="Entrar" />
         </form>
     );
